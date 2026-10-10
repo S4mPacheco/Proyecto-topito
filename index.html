@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NUESTROS RECUERDOS 💞</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #fbcfe8 0%, #ffe4e6 100%);
+      min-height: 100vh;
+    }
+    h1, .titulo-pacifico {
+      font-family: 'Pacifico', cursive;
+    }
+    /* Animación de flotación suave */
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    /* Estilos para el modal */
+    #modal-ruleta {
+      backdrop-filter: blur(5px);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+    
+    /* MODO OSCURO */
+    body.dark-mode {
+      background: linear-gradient(135deg, #111827 0%, #1f2937 100%) !important;
+    }
+    body.dark-mode .bg-white,
+    body.dark-mode .glass-card {
+      background-color: #1f2937 !important;
+      border-color: #374151 !important;
+    }
+    body.dark-mode .bg-white\/70,
+    body.dark-mode .bg-white\/80 {
+      background-color: rgba(31, 41, 55, 0.8) !important;
+    }
+    body.dark-mode .text-pink-600,
+    body.dark-mode .text-pink-700,
+    body.dark-mode .text-gray-800 {
+      color: #fbcfe8 !important; /* Rosa claro para contraste */
+    }
+    body.dark-mode p,
+    body.dark-mode span,
+    body.dark-mode .text-gray-700 {
+      color: #d1d5db !important; /* Gris claro */
+    }
+    body.dark-mode .bg-pink-50,
+    body.dark-mode .bg-rose-50,
+    body.dark-mode .bg-indigo-50,
+    body.dark-mode .bg-emerald-50 {
+      background-color: #374151 !important; /* Fondo oscuro para cajas de resultados */
+      border-color: #4b5563 !important;
+    }
+  </style>
+</head>
+<body class="text-gray-800 pb-12 relative overflow-x-hidden">
+
+  <!-- Decoraciones de fondo -->
+  <img src="imagenes/soraka.webp" alt="soraka" class="w-28 md:w-36 fixed top-10 left-4 md:left-10 opacity-80 floating rotate-12 z-0 pointer-events-none">
+  <img src="imagenes/corazones.webp" alt="corazones" class="w-24 md:w-32 fixed bottom-20 left-6 md:left-20 opacity-60 floating rotate-12 z-0 pointer-events-none" style="animation-delay: 1s;">
+  <img src="imagenes/yone.webp" alt="yone" class="w-32 md:w-40 fixed bottom-10 right-4 md:right-10 opacity-80 floating rotate-[-12deg] z-0 pointer-events-none" style="animation-delay: 2s;">
+  <img src="imagenes/corazones2.webp" alt="corazones" class="w-24 md:w-32 fixed top-10 right-6 md:right-20 opacity-60 floating z-0 pointer-events-none" style="animation-delay: 1.5s;">
+
+  <div class="max-w-5xl mx-auto px-4 pt-12 relative z-10">
+    
+    <!-- Header -->
+    <header class="text-center mb-10 flex flex-col items-center">
+      <h1 class="text-5xl md:text-6xl text-pink-600 mb-4 drop-shadow-md">Nuestros Recuerdos</h1>
+      <div class="mt-4 inline-block bg-white/70 backdrop-blur-md px-6 py-2 rounded-full border border-pink-200 shadow-sm text-pink-700 font-semibold text-sm md:text-base mb-6">
+        ✨ Escribiendo nuestra historia desde hace: <span id="contador-dias" class="font-bold text-pink-600">...</span> ✨
+      </div>
+      
+      <!-- Reproductor Spotify Integrado -->
+      <div class="w-[300px] hover:scale-105 transition-transform duration-300 drop-shadow-md">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3sK8wGT43QFpWrvNQsrQya?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </header>
+
+    <!-- Hub de Citas Virtuales (NUEVO) -->
+    <section class="mb-14 text-center mt-8">
+      <button onclick="abrirRuleta()" class="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white shadow-pink-300/50 shadow-xl rounded-full px-8 py-5 text-xl font-bold transition transform hover:-translate-y-1 hover:scale-105 flex items-center justify-center mx-auto gap-3">
+        <i class="fa-solid fa-dice text-2xl"></i> Ruleta de Citas
+      </button>
+    </section>
+
+    <!-- Grid de Memorias y Enlaces (REDISEÑADO) -->
+    <section>
+      <h2 class="titulo-pacifico text-3xl text-center text-pink-600 mb-8 drop-shadow-sm">Nuestros Momentos</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        
+        <!-- Línea de Tiempo (Destacado, ocupa 2 columnas) -->
+        <a href="links/album/album.html" class="col-span-2 row-span-2 group relative overflow-hidden rounded-3xl shadow-lg transition transform hover:-translate-y-2 bg-pink-400">
+          <!-- Contenedor del Slideshow -->
+          <div id="bg-slideshow" class="absolute inset-0 bg-cover bg-center transition-opacity duration-700 z-0" style="background-image: url('imagenes/16%20oct%202024.jpg');"></div>
+          <!-- Capa Rosada (Overlay) -->
+          <div class="absolute inset-0 bg-pink-500 opacity-60 group-hover:opacity-40 transition z-10"></div>
+          <!-- Contenido -->
+          <div class="relative z-20 p-8 h-full flex flex-col justify-center items-center text-white text-center drop-shadow-md">
+            <i class="fa-solid fa-images text-6xl mb-4"></i>
+            <h3 class="text-3xl font-bold">Línea de Tiempo</h3>
+            <p class="mt-2 text-lg font-medium opacity-90">Nuestra historia en fotos</p>
+          </div>
+        </a>
+
+        <!-- Mi Reina -->
+        <a href="links/pagina mi mujer/mimujerlinda.html" class="glass-card flex flex-col items-center justify-center p-6 rounded-3xl shadow-lg text-pink-700 font-bold transition transform hover:-translate-y-2 hover:bg-white/80">
+          <i class="fa-solid fa-crown text-3xl mb-2 text-yellow-500"></i>
+          <span>Mi Reina</span>
+        </a>
+
+        <!-- Cumpleaños -->
+        <a href="links/cumple de mi mujer/index.html" class="glass-card flex flex-col items-center justify-center p-6 rounded-3xl shadow-lg text-pink-700 font-bold transition transform hover:-translate-y-2 hover:bg-white/80">
+          <i class="fa-solid fa-cake-candles text-3xl mb-2 text-rose-500"></i>
+          <span>Cumpleaños</span>
+        </a>
+
+        <!-- Motivación -->
+        <a href="links/motivacion/index.html" class="glass-card flex flex-col items-center justify-center p-6 rounded-3xl shadow-lg text-pink-700 font-bold transition transform hover:-translate-y-2 hover:bg-white/80">
+          <i class="fa-solid fa-sun text-3xl mb-2 text-orange-400"></i>
+          <span>Motivación</span>
+        </a>
+
+        <!-- No estés triste -->
+        <a href="links/no qro q tes triste/index.html" class="glass-card flex flex-col items-center justify-center p-6 rounded-3xl shadow-lg text-pink-700 font-bold transition transform hover:-translate-y-2 hover:bg-white/80">
+          <i class="fa-solid fa-envelope-open-heart text-3xl mb-2 text-pink-500"></i>
+          <span class="text-center">No estés triste 🥺</span>
+        </a>
+
+        <!-- Me amas? (Ocupa 2 columnas en movil, 1 en escritorio) -->
+        <a href="links/me amas/index.html" class="col-span-2 md:col-span-1 glass-card flex flex-col items-center justify-center p-6 rounded-3xl shadow-lg text-pink-700 font-bold transition transform hover:-translate-y-2 hover:bg-white/80">
+          <i class="fa-solid fa-dog text-3xl mb-2 text-amber-600"></i>
+          <span>¿Me amas?</span>
+        </a>
+
+        <!-- Charco -->
+        <a href="links/charco/index.html" class="col-span-2 md:col-span-1 glass-card flex flex-col items-center justify-center p-6 rounded-3xl shadow-lg text-pink-700 font-bold transition transform hover:-translate-y-2 hover:bg-white/80">
+          <i class="fa-solid fa-frog text-3xl mb-2 text-emerald-500"></i>
+          <span>Charco</span>
+        </a>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal de Ruleta -->
+  <div id="modal-ruleta" class="fixed inset-0 bg-black/40 hidden z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl p-6 max-w-md w-full border-2 border-pink-200 relative text-center">
+      <button onclick="abrirConfig()" class="absolute top-3 left-4 text-gray-400 hover:text-pink-500 transition text-2xl" title="Configurar Juegos">⚙️</button>
+      <button onclick="cerrarRuleta()" class="absolute top-2 right-4 text-gray-500 hover:text-gray-800 text-xl font-bold">x</button>
+      
+      <h3 class="titulo-pacifico text-3xl text-pink-500 mb-6 mt-2">¿Qué hacemos hoy?</h3>
+      
+      <!-- Resultados -->
+      <div class="space-y-3 mb-6 text-left">
+        <div class="bg-pink-50 p-3 rounded border border-pink-100">
+          <p class="text-xs text-pink-400 font-bold uppercase mb-1">🎮 Juego</p>
+          <p id="res-juego" class="text-lg font-bold text-gray-700">...</p>
+        </div>
+        <div class="bg-pink-50 p-3 rounded border border-pink-100">
+          <p class="text-xs text-pink-400 font-bold uppercase mb-1">🎬 Película / Serie</p>
+          <p id="res-peli" class="text-lg font-bold text-gray-700">...</p>
+        </div>
+        <div class="bg-pink-50 p-3 rounded border border-pink-100">
+          <p class="text-xs text-pink-400 font-bold uppercase mb-1">🍕 Actividad</p>
+          <p id="res-act" class="text-lg font-bold text-gray-700">...</p>
+        </div>
+      </div>
+
+      <button id="btn-girar" onclick="girarRuleta()" class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-6 rounded-lg w-full text-lg">
+        Girar Ruleta
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal de Configuración -->
+  <div id="modal-config" class="fixed inset-0 bg-black/40 hidden z-[60] flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg p-5 max-w-sm w-full relative text-left border-2 border-pink-200">
+      <button onclick="cerrarConfig()" class="absolute top-2 right-4 text-gray-500 hover:text-gray-800 text-xl font-bold">x</button>
+      <h3 class="text-xl font-bold text-pink-600 mb-2">Nuestros juegos</h3>
+      <p class="text-sm text-gray-600 mb-3">Anota aquí los juegos que queremos jugar (uno por renglón):</p>
+      <textarea id="lista-juegos" rows="6" class="w-full border border-gray-300 rounded p-2 text-gray-700 focus:outline-none focus:border-pink-400"></textarea>
+      <button onclick="guardarJuegos()" class="mt-3 bg-pink-400 hover:bg-pink-500 text-white font-bold py-2 px-4 rounded w-full">Guardar</button>
+    </div>
+  </div>
+
+  <!-- Botón Modo Oscuro -->
+  <button id="btn-darkmode" class="fixed bottom-6 right-6 z-50 bg-gray-800 text-white hover:bg-gray-700 w-12 h-12 rounded-full shadow-2xl flex items-center justify-center transition-transform transform hover:scale-110 border-2 border-gray-600">
+    <i class="fa-solid fa-moon text-xl"></i>
+  </button>
+
+  <script>
+    // --- LÓGICA DE MODO OSCURO ---
+    const btnDarkMode = document.getElementById('btn-darkmode');
+    
+    // Cargar preferencia guardada
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      btnDarkMode.innerHTML = '<i class="fa-solid fa-sun text-xl text-yellow-300"></i>';
+    }
+
+    btnDarkMode.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        btnDarkMode.innerHTML = '<i class="fa-solid fa-sun text-xl text-yellow-300"></i>';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        btnDarkMode.innerHTML = '<i class="fa-solid fa-moon text-xl"></i>';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    // --- LÓGICA DEL SLIDESHOW (LÍNEA DE TIEMPO) ---
+    const imagenesAlbum = [
+      "imagenes/16 oct 2024.jpg",
+      "imagenes/8 nov 2024.jpg",
+      "imagenes/8 dic 2024.jpg",
+      "imagenes/diciembre 2024.jpg",
+      "imagenes/enero 23 2025.jpg",
+      "imagenes/15 feb 2025.jpg",
+      "imagenes/4 abril 2025.jpg",
+      "imagenes/10 abril 2025.jpg",
+      "imagenes/10 de abril 2025 salitre.jpg",
+      "imagenes/10 mayo 2026.jpg",
+      "imagenes/21 jul 2025.jpg",
+      "imagenes/sabado 6 sep.jpg",
+      "imagenes/septiembre 2025 girardot.jpg",
+      "imagenes/18 octubre 2025.jpg",
+      "imagenes/30 nov 2025.jpg",
+      "imagenes/1 de dic 2025 nuestro cumpleaños.jpg",
+      "imagenes/1 de enero 2026 año nuevo.jpg",
+      "imagenes/15 feb 2026 volvemos crtgna y brrquilla.jpg",
+      "imagenes/18 jul 2026 santa marta.jpg",
+      "imagenes/septiempre spa.jpg",
+      "imagenes/16 septiembre 2026 mirador medellin.jpg"
+    ];
+    let currentSlide = 0;
+    const bgSlideshow = document.getElementById("bg-slideshow");
+    
+    if (bgSlideshow) {
+      setInterval(() => {
+        // Desvanecer
+        bgSlideshow.style.opacity = '0';
+        
+        setTimeout(() => {
+          // Cambiar imagen (Reemplazar espacios por %20 para CSS)
+          currentSlide = (currentSlide + 1) % imagenesAlbum.length;
+          const safeUrl = imagenesAlbum[currentSlide].replace(/ /g, "%20");
+          bgSlideshow.style.backgroundImage = `url('${safeUrl}')`;
+          // Aparecer
+          bgSlideshow.style.opacity = '1';
+        }, 700); // Esperar que termine el transition de Tailwind (duration-700)
+      }, 4000); // Cambiar cada 4 segundos
+    }
+
+    // --- LÓGICA DEL CONTADOR DE DÍAS JUNTOS ---
+    // Fecha de inicio: 6 de septiembre de 2024 (Mes 8 en JS, porque enero es 0)
+    const fechaInicio = new Date(2024, 8, 6).getTime(); 
+
+    setInterval(() => {
+      const ahora = new Date().getTime();
+      const dif = ahora - fechaInicio;
+      
+      const dias = Math.floor(dif / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((dif % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((dif % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((dif % (1000 * 60)) / 1000);
+      
+      const el = document.getElementById('contador-dias');
+      if(el) {
+        el.innerHTML = `${dias} días, ${horas}h, ${minutos}m, ${segundos}s`;
+      }
+    }, 1000);
+
+    // --- LÓGICA DE LA RULETA ---
+    const modal = document.getElementById("modal-ruleta");
+    const modalConfig = document.getElementById("modal-config");
+    
+    // Juegos dinámicos con localStorage
+    let juegos = [];
+    const juegosGuardados = localStorage.getItem('mis_juegos');
+    if (juegosGuardados) {
+      juegos = JSON.parse(juegosGuardados);
+    }
+    
+    // Listas fijas
+    const peliculas = ['Noche de Terror 👻', 'Comedia Romántica 💕', 'Película Animada 🎬', 'Elegimos una del Top 10 de Netflix', 'Documental Random 🌍'];
+    const actividades = ['Pedir Rappi juntos en videollamada 🍔', 'Jugar GeoGuessr / Pinturillo 🎨', 'Test de personalidad juntos 🧠', 'Ver videos de YouTube compartiendo pantalla 📺', 'Hacer un quiz de parejas online 💖'];
+
+    function abrirRuleta() {
+      modal.classList.remove("hidden");
+    }
+
+    function cerrarRuleta() {
+      modal.classList.add("hidden");
+    }
+
+    function abrirConfig() {
+      document.getElementById("lista-juegos").value = juegos.join('\n');
+      modalConfig.classList.remove("hidden");
+    }
+
+    function cerrarConfig() {
+      modalConfig.classList.add("hidden");
+    }
+
+    function guardarJuegos() {
+      const texto = document.getElementById("lista-juegos").value;
+      juegos = texto.split('\n').map(j => j.trim()).filter(j => j !== '');
+      localStorage.setItem('mis_juegos', JSON.stringify(juegos));
+      cerrarConfig();
+      // Pequeño feedback visual
+      alert("¡Lista de juegos guardada con éxito!");
+    }
+
+    function girarRuleta() {
+      const btn = document.getElementById("btn-girar");
+      btn.disabled = true;
+      btn.innerHTML = 'Pensando...';
+      
+      const resJuego = document.getElementById("res-juego");
+      const resPeli = document.getElementById("res-peli");
+      const resAct = document.getElementById("res-act");
+
+      // Efecto de "ruleta girando"
+      let counter = 0;
+      const intervalo = setInterval(() => {
+        resJuego.innerText = juegos.length > 0 ? juegos[Math.floor(Math.random() * juegos.length)] : "¡Agrega juegos en el ⚙️!";
+        resPeli.innerText = peliculas[Math.floor(Math.random() * peliculas.length)];
+        resAct.innerText = actividades[Math.floor(Math.random() * actividades.length)];
+        counter++;
+        
+        if(counter > 20) {
+          clearInterval(intervalo);
+          btn.disabled = false;
+          btn.innerHTML = 'Girar de nuevo';
+        }
+      }, 50);
+    }
+  </script>
+</body>
+</html>
