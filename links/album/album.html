@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestra Historia 📖</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { 
+      font-family: 'Quicksand', sans-serif; 
+      background-color: #fdf2f8; 
+      background-image: radial-gradient(#fce7f3 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .fuente-manuscrita { font-family: 'Caveat', cursive; }
+    
+    .linea-tiempo::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background-color: #fbcfe8;
+      border-radius: 2px;
+    }
+    
+    @media (min-width: 768px) {
+      .linea-tiempo::before { left: 50%; transform: translateX(-50%); }
+    }
+    @media (max-width: 767px) {
+      .linea-tiempo::before { left: 24px; }
+    }
+    
+    /* MODO OSCURO */
+    body.dark-mode {
+      background-color: #111827 !important;
+      background-image: radial-gradient(#374151 1px, transparent 1px) !important;
+    }
+    body.dark-mode .bg-white {
+      background-color: #1f2937 !important;
+      border-color: #4b5563 !important;
+    }
+    body.dark-mode h1,
+    body.dark-mode h3.fuente-manuscrita {
+      color: #fbcfe8 !important;
+    }
+    body.dark-mode p.text-pink-800 {
+      color: #f472b6 !important;
+    }
+    body.dark-mode p.text-gray-600 {
+      color: #d1d5db !important;
+    }
+    body.dark-mode .bg-pink-50,
+    body.dark-mode .bg-rose-50,
+    body.dark-mode .bg-gray-100 {
+      background-color: #374151 !important;
+      border-color: #4b5563 !important;
+    }
+  </style>
+</head>
+<body class="text-gray-800 antialiased pb-20">
+
+  <div class="pt-6 pl-6">
+    <a href="../../index.html" class="inline-flex items-center text-pink-500 hover:text-pink-700 font-bold text-lg transition">
+      <i class="fa-solid fa-arrow-left mr-2"></i> Volver al Menú
+    </a>
+  </div>
+
+  <header class="text-center mt-4 mb-16 px-4">
+    <h1 class="fuente-manuscrita text-6xl md:text-7xl text-pink-600 mb-2 drop-shadow-sm">Nuestra Historia</h1>
+    <p class="text-lg text-pink-800 font-semibold max-w-lg mx-auto">Desde el primer día hasta hoy, cada momento a tu lado es mi favorito. ❤️</p>
+  </header>
+
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 linea-tiempo">
+
+    <!-- EVENTO 1 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pink-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-0 md:mr-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-pink-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-pink-500 font-bold text-xs md:text-sm uppercase tracking-wide">19 de Octubre 2024</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Concierto de Rojuu</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/16 oct 2024.jpg" alt="Concierto de Rojuu" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Nuestra primera vez viéndonos en persona y donde me declaré. El comienzo de todo.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 2 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-rose-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-rose-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-rose-500 font-bold text-xs md:text-sm uppercase tracking-wide">8 de Noviembre 2024</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Nuestro viaje</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/8 nov 2024.jpg" alt="Nuestro viaje" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Un viaje normal, pero especial porque estábamos juntos.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 3 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pink-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-0 md:mr-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-pink-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-pink-500 font-bold text-xs md:text-sm uppercase tracking-wide">8 de Diciembre 2024</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Día de Velitas</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/8 dic 2024.jpg" alt="Día de Velitas" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Celebrando velitas de nada, pero juntos que es lo que importa.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 4 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-rose-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-rose-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-rose-500 font-bold text-xs md:text-sm uppercase tracking-wide">Diciembre 2024</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Mirador de Monserrate</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/diciembre 2024.jpg" alt="Mirador de Monserrate" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Disfrutando de la vista de Bogotá desde lo más alto en Monserrate.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 5 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pink-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-0 md:mr-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-pink-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-pink-500 font-bold text-xs md:text-sm uppercase tracking-wide">23 de Enero 2025</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Día de compras</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/enero 23 2025.jpg" alt="Día de compras" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Un viaje normal en el que fuimos a hacer compras.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 6 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-rose-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-rose-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-rose-500 font-bold text-xs md:text-sm uppercase tracking-wide">15 de Febrero 2025</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Cartagena</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/15 feb 2025.jpg" alt="Cartagena" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Disfrutando del clima y la belleza de Cartagena juntos.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 7 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pink-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-0 md:mr-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-pink-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-pink-500 font-bold text-xs md:text-sm uppercase tracking-wide">4 de Abril 2025</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Concierto de CRO</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/4 abril 2025.jpg" alt="Concierto de CRO" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Cantando y saltando en el concierto de CRO.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 8 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-rose-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-rose-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-rose-500 font-bold text-xs md:text-sm uppercase tracking-wide">10 de Abril 2025</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Salchipapería</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/10 abril 2025.jpg" alt="Salchipapería" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Comiendo delicioso en la salchipapería.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 9 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pink-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-0 md:mr-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-pink-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-pink-500 font-bold text-xs md:text-sm uppercase tracking-wide">10 de Abril 2025</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Salitre Mágico</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/10 de abril 2025 salitre.jpg" alt="Salitre Mágico" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Mucha adrenalina y diversión en las atracciones de Salitre Mágico.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 10 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-rose-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-rose-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-rose-500 font-bold text-xs md:text-sm uppercase tracking-wide">10 de Mayo 2025</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Un día en casa</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/10 mayo 2026.jpg" alt="Un día en casa" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Un día normal de casa, disfrutando de nuestra propia compañía. (Foto guardada como 10 mayo 2026).
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 11 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pink-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-0 md:mr-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-pink-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-pink-500 font-bold text-xs md:text-sm uppercase tracking-wide">21 de Julio 2025</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">La Juguetería</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/21 jul 2025.jpg" alt="La Juguetería" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Nuestra cita especial en el restaurante La Juguetería.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 12 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-rose-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-rose-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-rose-500 font-bold text-xs md:text-sm uppercase tracking-wide">6 de Septiembre 2025</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Cita en KFC</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/sabado 6 sep.jpg" alt="Cita en KFC" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Sábado de pollo frito y una cita hermosa en KFC.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 13 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pink-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-0 md:mr-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-pink-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-pink-500 font-bold text-xs md:text-sm uppercase tracking-wide">Septiembre 2025</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Girardot</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/septiembre 2025 girardot.jpg" alt="Girardot" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Un viaje genial y soleado a Girardot.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 14 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-rose-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-rose-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-rose-500 font-bold text-xs md:text-sm uppercase tracking-wide">18 de Octubre 2025</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Volvimos a Salitre</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/18 octubre 2025.jpg" alt="Volvimos a Salitre" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Nuestra segunda vez disfrutando de Salitre Mágico.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 15 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pink-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-0 md:mr-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-pink-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-pink-500 font-bold text-xs md:text-sm uppercase tracking-wide">30 de Noviembre 2025</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">En mi casa con Skye</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/30 nov 2025.jpg" alt="En mi casa con Skye" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          La primera vez que llegaste a mi casa. Aquí estás con mi perra Skye.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 16 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-rose-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-rose-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-rose-500 font-bold text-xs md:text-sm uppercase tracking-wide">1 de Diciembre 2025</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Nuestros Cumpleaños</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/1 de dic 2025 nuestro cumpleaños.jpg" alt="Nuestros Cumpleaños" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Cita en el restaurante Historia de Amor para celebrar el cumpleaños de ambos.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 17 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pink-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-0 md:mr-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-pink-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-pink-500 font-bold text-xs md:text-sm uppercase tracking-wide">1 de Enero 2026</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Año Nuevo en Girardot</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/1 de enero 2026 año nuevo.jpg" alt="Año Nuevo en Girardot" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Recibiendo el 2026 con la mejor energía celebrando en Girardot.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 18 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-rose-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-rose-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-rose-500 font-bold text-xs md:text-sm uppercase tracking-wide">15 de Febrero 2026</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Carnavales</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/15 feb 2026 volvemos crtgna y brrquilla.jpg" alt="Carnavales" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Volvimos a Cartagena y a Barranquilla para disfrutar de los carnavales.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 19 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pink-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-0 md:mr-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-pink-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-pink-500 font-bold text-xs md:text-sm uppercase tracking-wide">18 de Julio 2026</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Santa Marta</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/18 jul 2026 santa marta.jpg" alt="Santa Marta" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Disfrutando de la brisa y el mar en Santa Marta.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 20 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-rose-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-rose-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-rose-500 font-bold text-xs md:text-sm uppercase tracking-wide">Septiembre 2026</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Spa en Bogotá</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/septiempre spa.jpg" alt="Spa en Bogotá" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Día de relajación total en un spa de Bogotá.
+        </p>
+      </div>
+    </div>
+
+    <!-- EVENTO 21 -->
+    <div class="relative flex items-center mb-16 w-full group">
+      <!-- Punto en la línea -->
+      <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-pink-400 border-4 border-white shadow absolute left-2 md:left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
+        <div class="w-3 h-3 bg-white rounded-full"></div>
+      </div>
+      <!-- Tarjeta -->
+      <div class="w-[calc(100%-3.5rem)] ml-14 md:ml-0 md:w-5/12 md:ml-0 md:mr-auto bg-white rounded-2xl shadow-md p-5 md:p-6 border-t-4 border-pink-400 transform transition duration-300 hover:-translate-y-2 hover:shadow-xl relative z-20">
+        <span class="text-pink-500 font-bold text-xs md:text-sm uppercase tracking-wide">16 de Septiembre 2026</span>
+        <h3 class="fuente-manuscrita text-3xl md:text-4xl text-gray-800 mt-1 mb-3">Mirador Medellín</h3>
+        
+        <div class="w-full h-48 sm:h-64 rounded-xl mb-4 shadow-sm border border-gray-100 overflow-hidden relative bg-gray-100">
+           <img src="../../imagenes/16 septiembre 2026 mirador medellin.jpg" alt="Mirador Medellín" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+        </div>
+        
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+          Un extra: En el mirador de Medellín observando la ciudad.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mensaje chistoso de Beta -->
+  <div class="text-center mt-12 mb-20 px-6">
+    <p class="text-pink-700 bg-pink-100 border-2 border-pink-300 rounded-xl p-4 inline-block max-w-lg shadow-sm text-sm md:text-base font-bold">
+      ⚠️ Aviso: no esta terminado, me faltan muchas fotos unu, pero la idea es que la sigamos llenando juntos! 🛠️💖
+    </p>
+  </div>
+
+  <!-- Botón Modo Oscuro -->
+  <button id="btn-darkmode" class="fixed bottom-6 right-6 z-50 bg-gray-800 text-white hover:bg-gray-700 w-12 h-12 rounded-full shadow-2xl flex items-center justify-center transition-transform transform hover:scale-110 border-2 border-gray-600">
+    <i class="fa-solid fa-moon text-xl"></i>
+  </button>
+
+  <script>
+    // --- LÓGICA DE MODO OSCURO ---
+    const btnDarkMode = document.getElementById('btn-darkmode');
+    
+    // Cargar preferencia guardada (Sincronizado con la página principal)
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      btnDarkMode.innerHTML = '<i class="fa-solid fa-sun text-xl text-yellow-300"></i>';
+    }
+
+    btnDarkMode.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        btnDarkMode.innerHTML = '<i class="fa-solid fa-sun text-xl text-yellow-300"></i>';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        btnDarkMode.innerHTML = '<i class="fa-solid fa-moon text-xl"></i>';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+
+</body>
+</html>
